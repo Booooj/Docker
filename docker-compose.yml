@@ -9,7 +9,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - mysql_data:/var/lib/mysql
+      - /mysql
 
   web:
     build: .
@@ -20,6 +20,3 @@ services:
       - 3000:3000
     depends_on:
       - db
-
-volumes:
-  mysql_data:
